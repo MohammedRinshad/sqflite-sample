@@ -71,7 +71,7 @@ class HomePage extends StatelessWidget {
                       child: Container(
                         margin: const EdgeInsets.all(10),
                         decoration: const BoxDecoration(
-                            color: Colors.yellow,
+                            color: Colors.white10,
                             boxShadow: [
                               BoxShadow(
                                 color: Colors.black12,

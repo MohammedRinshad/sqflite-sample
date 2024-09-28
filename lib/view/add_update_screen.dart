@@ -73,41 +73,29 @@ class AddUpdateTask extends StatelessWidget {
                     const SizedBox(
                       height: 40,
                     ),
-                    SizedBox(
-                      width: MediaQuery.of(context).size.width,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          ButtonWidget(
-                              title: 'Save',
-                              color: Colors.red,
-                              press: () {
-                                if (todoId != null) {
-                                  // Update the task if todoId is present
-                                  todoProvider.updateTask(
-                                    TodoModel(
-                                      id: todoId!,
-                                      title: todoProvider.titleController.text,
-                                      desc: todoProvider.descController.text,
-                                      dateAndTime:
-                                          todoDt ?? DateTime.now().toString(),
-                                    ),
-                                  );
-                                  context.go('/');
-                                } else {
-                                  todoProvider.addTask();
-                                  context.go('/');
-                                }
-                              }),
-                          // ButtonWidget(
-                          //   title: 'Clear',
-                          //   color: Colors.green,
-                          //   press: () async {
-                          //     todoProvider.clearFields();
-                          //   },
-                          // ),
-                        ],
-                      ),
+                    Align(
+                      alignment: Alignment.bottomCenter,
+                      child: ButtonWidget(
+                          title: 'Save',
+                          color: Colors.red,
+                          press: () {
+                            if (todoId != null) {
+                              // Update the task if todoId is present
+                              todoProvider.updateTask(
+                                TodoModel(
+                                  id: todoId!,
+                                  title: todoProvider.titleController.text,
+                                  desc: todoProvider.descController.text,
+                                  dateAndTime:
+                                      todoDt ?? DateTime.now().toString(),
+                                ),
+                              );
+                              context.go('/');
+                            } else {
+                              todoProvider.addTask();
+                              context.go('/');
+                            }
+                          }),
                     )
                   ],
                 ),

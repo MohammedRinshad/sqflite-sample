@@ -4,7 +4,6 @@ import 'package:sqflitecred/provider/todo_provider.dart';
 import 'package:sqflitecred/provider/update_provider.dart';
 import 'package:sqflitecred/utils/routes.dart';
 
-
 void main() {
   runApp(const MyApp());
 }
